@@ -6,7 +6,7 @@ import './Parts.css'
 const Parts = () => {
     const [parts, setParts] = useState([]);
     useEffect(() => {
-        fetch('service.json')
+        fetch('http://localhost:5000/parts')
             .then(res => res.json())
             .then(data => setParts(data))
     }, [])

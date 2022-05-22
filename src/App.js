@@ -9,6 +9,7 @@ import Register from './components/Pages/LoginDetails/Register/Register';
 import BuyNow from './components/Pages/BuyNow/BuyNow';
 import RequireAuth from './components/Pages/LoginDetails/RequireAuth/RequireAuth';
 import Footer from './components/Pages/Home/Footer/Footer';
+import ManageProducts from './components/Pages/ManageProducts/ManageProducts';
 
 function App() {
   return (
@@ -21,6 +22,11 @@ function App() {
         <Route path='/buyNow/:buyNowId' element={
           <RequireAuth>
             <BuyNow></BuyNow>
+          </RequireAuth>
+        }></Route>
+        <Route path='/manageProducts' element={
+          <RequireAuth>
+            <ManageProducts></ManageProducts>
           </RequireAuth>
         }></Route>
         <Route path='/login' element={<Login></Login>}></Route>
