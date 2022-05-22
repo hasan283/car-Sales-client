@@ -1,21 +1,46 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../../../firebase.init';
+import SocialLogin from '../SocialLogin/SocialLogin';
+import Loading from '../../../Sheard/Loading';
+
 
 const Register = () => {
-
     const navigate = useNavigate();
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+
+    let errorElement;
+    if (error) {
+        errorElement = <p className='text-danger text-center'>Error: {error.message}</p>;
+
+    }
+
+    if (loading) {
+        return <Loading></Loading>
+    }
 
     const handleRegister = event => {
         event.preventDefault();
         const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
-        console.log(name, email, password);
+        createUserWithEmailAndPassword(email, password);
     }
 
     const navigateLogin = () => {
         navigate('/login')
+    }
+    if (user) {
+        navigate(from, { replace: true });
     }
 
 
@@ -40,6 +65,7 @@ const Register = () => {
                             <Form.Control id='password' type="password" placeholder="Password" required />
                         </Form.Group>
                         <center>
+                            {errorElement}
                             <button className='btn bg-dark text-white px-5'>Register</button>
                         </center>
                     </Form>
@@ -48,6 +74,7 @@ const Register = () => {
                 </div>
                 <div className="col-lg-3 col-md-3 col-sm-12"></div>
             </div>
+            <SocialLogin></SocialLogin>
         </div>
     );
 };

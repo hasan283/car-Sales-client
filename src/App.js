@@ -7,6 +7,8 @@ import Blog from './components/Pages/Blog/Blog';
 import Login from './components/Pages/LoginDetails/Login/Login';
 import Register from './components/Pages/LoginDetails/Register/Register';
 import BuyNow from './components/Pages/BuyNow/BuyNow';
+import RequireAuth from './components/Pages/LoginDetails/RequireAuth/RequireAuth';
+import Footer from './components/Pages/Home/Footer/Footer';
 
 function App() {
   return (
@@ -16,10 +18,16 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/blog' element={<Blog></Blog>}></Route>
-        <Route path='/buyNow/:buyNowId' element={<BuyNow></BuyNow>}></Route>
+        <Route path='/buyNow/:buyNowId' element={
+          <RequireAuth>
+            <BuyNow></BuyNow>
+          </RequireAuth>
+        }></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
       </Routes>
+      <Footer></Footer>
+
 
     </div >
   );
