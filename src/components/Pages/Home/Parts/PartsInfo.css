@@ -1,0 +1,24 @@
+.parts-info button{
+    width: 100%;
+    background: #ffd800;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    padding: 10px 0;
+    transition: 0.5s;
+}
+.parts-info .h5{
+    font-weight: bold;
+}
+.parts-info h4{
+    font-weight: bold;
+    color: #f6621b;
+}
+/* .parts-info img{
+    width: 200px;
+    height: 200px;
+} */
+.parts-info button:hover{
+    background-color: #f6621b;
+    color: #fff;
+}

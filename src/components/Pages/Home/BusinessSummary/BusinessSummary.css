@@ -1,0 +1,18 @@
+.business-container .title p{
+    width: 50%;
+    margin: auto;
+    padding-top: 1rem;
+}
+.business-container .sat-container .sat{
+    border-radius: 10px;
+    background: #f6621b;
+    height: 200px;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+    .business-container .title p{
+        width: 100%;
+        padding: 1rem;
+    }
+}
