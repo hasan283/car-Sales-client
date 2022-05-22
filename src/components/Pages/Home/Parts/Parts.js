@@ -12,7 +12,7 @@ const Parts = () => {
     }, [])
 
     return (
-        <div className='pt-5'>
+        <div id='deals' className='pt-5'>
 
             <div id='more' className="parts-top pt-5">
                 <img style={{ width: '100%' }} src={banner3} alt="" />
