@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        "_id": 1,
         "name": "Short ribs leberkas frankfurter prosciutto kielb",
         "img":"https://i.ibb.co/JHG3kt8/2-300x300.jpg",
         "description": "This is a Amazing carr part. If you like it Please buy now!",
@@ -9,7 +9,7 @@
         "price":"450"
     },
     {
-        "id": 2,
+        "_id": 2,
         "name": "Meatloaf shank capicola ground round cow",
         "img":"https://i.ibb.co/Wt5NmLR/3-300x300.jpg",
         "description": "This is a Amazing carr part. If you like it Please buy now!",
@@ -18,7 +18,7 @@
         "price":"400"
     },
     {
-        "id": 3,
+        "_id": 3,
         "name": "Jowl porchetta jerky turducken rump buffalo",
         "img":"https://i.ibb.co/c618gg0/4-300x300.jpg",
         "description": "This is a Amazing carr part. If you like it Please buy now!",
@@ -27,7 +27,7 @@
         "price":"800"
     },
     {
-        "id": 4,
+        "_id": 4,
         "name": "Strip steak t-bone kevin fatback frankfurt",
         "img":"https://i.ibb.co/c618gg0/4-300x300.jpg",
         "description": "This is a Amazing carr part. If you like it Please buy now!",
@@ -36,7 +36,7 @@
         "price":"800"
     },
     {
-        "id": 5,
+        "_id": 5,
         "name": "Buffalo pastrami spare ribs boudin landjae",
         "img":"https://i.ibb.co/7SjcHMn/10-300x300.jpg",
         "description": "This is a Amazing carr part. If you like it Please buy now!",
@@ -45,7 +45,7 @@
         "price":"250"
     },
     {
-        "id": 6,
+        "_id": 6,
         "name": "Venison leberkas swine jowl pork kielbasa",
         "img":"https://i.ibb.co/WP3yLcT/images.jpg",
         "description": "This is a Amazing carr part. If you like it Please buy now!",

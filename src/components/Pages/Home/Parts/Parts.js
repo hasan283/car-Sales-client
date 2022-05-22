@@ -22,7 +22,7 @@ const Parts = () => {
                 <div className="parts">
                     {
                         parts.map(part => <PartsInfo
-                            key={part.id}
+                            key={part._id}
                             part={part}></PartsInfo>)
                     }
                 </div>

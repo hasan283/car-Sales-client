@@ -1,10 +1,14 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import './PartsInfo.css';
 
 const PartsInfo = ({ part }) => {
-    const { name, img, description, price, quantity } = part;
+    const { _id, name, img, description, price, quantity } = part;
+    const navigate = useNavigate()
+    const navigateBuyNow = id => {
+        navigate(`/buyNow/${id}`);
+    }
     return (
         <div className='parts-info mt-5 pt-5'>
             <Card>
@@ -16,7 +20,7 @@ const PartsInfo = ({ part }) => {
                         <p><b>Quantity: </b>{quantity}</p>
                         <h4>${price}</h4>
                     </Card.Text>
-                    <Link to='/buy'><button>Buy Now</button></Link>
+                    <button onClick={() => navigateBuyNow(_id)}>Buy Now</button>
                 </Card.Body>
             </Card>
         </div>
