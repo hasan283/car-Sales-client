@@ -26,6 +26,7 @@ const MyOrder = () => {
                         <th>Parts Name</th>
                         <th>Quantity</th>
                         <th>Address</th>
+                        <th>Manage Order</th>
                     </tr>
                 </thead>
                 <tbody>
