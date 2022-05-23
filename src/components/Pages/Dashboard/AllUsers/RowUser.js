@@ -19,10 +19,14 @@ const RowUser = ({ user, index }) => {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
                 }
             })
-                .then(res => res.json())
+                .then(res => {
+                    toast.error('Failed to make an Admin!')
+                    res.json()
+                })
                 .then(data => {
-                    refetch();
-                    console.log(data)
+                    if (data.modifiedCount > 0) {
+                        toast.success('Successfully made an admin!')
+                    }
                 });
         }
 
@@ -40,7 +44,7 @@ const RowUser = ({ user, index }) => {
                 .then(data => {
                     const remaining = users.filter(list => list._id !== id);
                     setUsers(remaining);
-                    toast('User Deleted Success!')
+                    toast.success('User Deleted Success!')
                 })
         }
     }
