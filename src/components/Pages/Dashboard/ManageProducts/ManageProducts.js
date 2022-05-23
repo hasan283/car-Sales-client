@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import { toast } from 'react-toastify';
 
 const ManageProducts = () => {
     const { register, handleSubmit } = useForm();
@@ -14,9 +15,9 @@ const ManageProducts = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result);
+                toast('Your Product Add Successfully!');
+                console.log(result)
             })
-        console.log(data)
     };
     return (
         <div className='pt-5 mt-5'>

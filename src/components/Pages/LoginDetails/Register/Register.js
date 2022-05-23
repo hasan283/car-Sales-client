@@ -1,10 +1,11 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
 import { useNavigate, useLocation } from "react-router-dom";
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import Loading from '../../../Sheard/Loading';
+import { async } from '@firebase/util';
 
 
 const Register = () => {
@@ -15,25 +16,27 @@ const Register = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
+    const [updateProfile, updating, error1] = useUpdateProfile(auth);
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
     let errorElement;
-    if (error) {
-        errorElement = <p className='text-danger text-center'>Error: {error.message}</p>;
+    if (error || error1) {
+        errorElement = <p className='text-danger text-center'>Error: {error?.message} {error1?.message}</p>;
 
     }
 
-    if (loading) {
+    if (loading || updating) {
         return <Loading></Loading>
     }
 
-    const handleRegister = event => {
+    const handleRegister = async (event) => {
         event.preventDefault();
         const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
-        createUserWithEmailAndPassword(email, password);
+        await createUserWithEmailAndPassword(email, password);
+        await updateProfile({ displayName: name });
     }
 
     const navigateLogin = () => {
@@ -66,7 +69,8 @@ const Register = () => {
                         </Form.Group>
                         <center>
                             {errorElement}
-                            <button className='btn bg-dark text-white px-5'>Register</button>
+                            <button
+                                className='btn bg-dark text-white px-5'>Register</button>
                         </center>
                     </Form>
 

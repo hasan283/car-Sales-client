@@ -9,7 +9,13 @@ import Register from './components/Pages/LoginDetails/Register/Register';
 import BuyNow from './components/Pages/BuyNow/BuyNow';
 import RequireAuth from './components/Pages/LoginDetails/RequireAuth/RequireAuth';
 import Footer from './components/Pages/Home/Footer/Footer';
-import ManageProducts from './components/Pages/ManageProducts/ManageProducts';
+import Dashboard from './components/Pages/Dashboard/Dashboard/Dashboard';
+import DeleteProducts from './components/Pages/Dashboard/DeleteProducts/DeleteProducts';
+import PlaceOrder from './components/Pages/BuyNow/PlaceOrder';
+import ManageProducts from './components/Pages/Dashboard/ManageProducts/ManageProducts';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   return (
@@ -24,14 +30,38 @@ function App() {
             <BuyNow></BuyNow>
           </RequireAuth>
         }></Route>
+        <Route path='/order/:buyNowId' element={<PlaceOrder></PlaceOrder>}></Route>
         <Route path='/manageProducts' element={
           <RequireAuth>
             <ManageProducts></ManageProducts>
           </RequireAuth>
         }></Route>
+        <Route path='/manageProducts' element={
+          <RequireAuth>
+            <ManageProducts></ManageProducts>
+          </RequireAuth>
+        }></Route>
+        <Route path='/deleteProducts' element={
+          <RequireAuth>
+            <DeleteProducts></DeleteProducts>
+          </RequireAuth>
+        }></Route>
+        <Route path='/dashboard' element={
+          <RequireAuth>
+            <Dashboard></Dashboard>
+          </RequireAuth>
+        }>
+          {/* <Route path='/dashboard/manageProducts' element={
+            <ManageProducts></ManageProducts>
+          }></Route>
+          <Route path='/dashboard/deleteProducts' element={
+            <DeleteProducts></DeleteProducts>
+          }></Route> */}
+        </Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
       </Routes>
+      <ToastContainer></ToastContainer>
       <Footer></Footer>
 
 

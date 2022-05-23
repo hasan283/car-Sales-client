@@ -1,0 +1,28 @@
+.parts .delete-parts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+.parts .delete-parts .parts-info{
+    padding: 1rem;
+}
+.parts .delete-parts img{
+    max-width: 100%;
+}
+.parts .delete-parts button{
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    background: #fed700;
+    padding: 0.5rem;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.5s;
+}
+.parts .delete-parts button:hover{
+    background: #f6621b;
+    color: #fff;
+}

@@ -2,14 +2,10 @@ import React, { useEffect, useState } from 'react';
 import banner3 from '../../../image/banner/banner-3.jpg'
 import PartsInfo from './PartsInfo';
 import './Parts.css'
+import useParts from '../../../../hooks/useParts';
 
 const Parts = () => {
-    const [parts, setParts] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:5000/parts')
-            .then(res => res.json())
-            .then(data => setParts(data))
-    }, [])
+    const [parts, setParts] = useParts();
 
     return (
         <div id='deals' className='pt-5'>
