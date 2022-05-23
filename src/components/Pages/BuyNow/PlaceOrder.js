@@ -21,6 +21,7 @@ const PlaceOrder = () => {
             parts: parts.name,
             buyNowId: buyNowId,
             phone: event.target.phone.value,
+            quantity: event.target.quantity.value,
             address: event.target.address.value,
         }
         axios.post('http://localhost:5000/order', order)

@@ -15,6 +15,7 @@ import PlaceOrder from './components/Pages/BuyNow/PlaceOrder';
 import ManageProducts from './components/Pages/Dashboard/ManageProducts/ManageProducts';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import MyOrder from './components/Pages/Dashboard/MyOrder/MyOrder';
 
 
 function App() {
@@ -31,32 +32,14 @@ function App() {
           </RequireAuth>
         }></Route>
         <Route path='/order/:buyNowId' element={<PlaceOrder></PlaceOrder>}></Route>
-        <Route path='/manageProducts' element={
-          <RequireAuth>
-            <ManageProducts></ManageProducts>
-          </RequireAuth>
-        }></Route>
-        <Route path='/manageProducts' element={
-          <RequireAuth>
-            <ManageProducts></ManageProducts>
-          </RequireAuth>
-        }></Route>
-        <Route path='/deleteProducts' element={
-          <RequireAuth>
-            <DeleteProducts></DeleteProducts>
-          </RequireAuth>
-        }></Route>
         <Route path='/dashboard' element={
           <RequireAuth>
             <Dashboard></Dashboard>
           </RequireAuth>
         }>
-          {/* <Route path='/dashboard/manageProducts' element={
-            <ManageProducts></ManageProducts>
-          }></Route>
-          <Route path='/dashboard/deleteProducts' element={
-            <DeleteProducts></DeleteProducts>
-          }></Route> */}
+          <Route index element={<MyOrder></MyOrder>}></Route>
+          <Route path='manageProducts' element={<ManageProducts></ManageProducts>}></Route>
+          <Route path='deleteProducts' element={<DeleteProducts></DeleteProducts>}></Route>
         </Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
