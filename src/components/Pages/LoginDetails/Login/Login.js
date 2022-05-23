@@ -6,6 +6,7 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import Loading from '../../../Sheard/Loading';
+import useToken from '../../../../hooks/useToken';
 
 const Login = () => {
     const emailRef = useRef('');
@@ -18,6 +19,7 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
     const location = useLocation();
+    const [token] = useToken(user)
     let from = location.state?.from?.pathname || "/";
 
     let errorElement;
@@ -25,7 +27,7 @@ const Login = () => {
         errorElement = <p className='text-danger text-center'>Error: {error.message}</p>;
 
     }
-    if (user) {
+    if (token) {
         navigate(from, { replace: true });
     }
 

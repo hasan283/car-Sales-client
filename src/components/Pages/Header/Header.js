@@ -14,6 +14,7 @@ const Header = () => {
     const handleSignOut = () => {
         signOut(auth)
         navigate('/login');
+        localStorage.removeItem('accessToken');
     }
     return (
         <Navbar collapseOnSelect expand="lg">

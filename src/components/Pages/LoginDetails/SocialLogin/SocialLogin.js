@@ -4,11 +4,13 @@ import { useNavigate, useLocation } from "react-router-dom";
 import auth from '../../../../firebase.init';
 import google from '../../../image/socialIcon/google.png';
 import github from '../../../image/socialIcon/github.png';
+import useToken from '../../../../hooks/useToken';
 
 const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const navigate = useNavigate();
     const location = useLocation();
+    const [token] = useToken(user)
     let from = location.state?.from?.pathname || "/";
     let errorElement;
     if (error) {

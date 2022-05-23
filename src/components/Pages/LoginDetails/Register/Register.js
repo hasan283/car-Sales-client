@@ -5,7 +5,7 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import auth from '../../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import Loading from '../../../Sheard/Loading';
-import { async } from '@firebase/util';
+import useToken from '../../../../hooks/useToken';
 
 
 const Register = () => {
@@ -17,6 +17,7 @@ const Register = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
     const [updateProfile, updating, error1] = useUpdateProfile(auth);
+    const [token] = useToken(user)
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
@@ -42,7 +43,7 @@ const Register = () => {
     const navigateLogin = () => {
         navigate('/login')
     }
-    if (user) {
+    if (token) {
         navigate(from, { replace: true });
     }
 
