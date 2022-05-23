@@ -3,24 +3,52 @@ import { useForm } from "react-hook-form";
 
 const ManageProducts = () => {
     const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        const url = `http://localhost:5000/parts`;
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+            })
+        console.log(data)
+    };
     return (
         <div className='pt-5 mt-5'>
 
             <div className="container pb-4">
-                <h4 className='py-3'>Add A Product!</h4>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className="mt-3">
-                        <input {...register("firstName", { required: true, maxLength: 20 })} />
+                <div className="row">
+                    <div className="col-lg-2 col-md-2 col-sm-12"></div>
+                    <div className="col-lg-8 col-md-8 col-sm-12">
+                        <h4 className='py-3'>Add A Product!</h4>
+                        <form onSubmit={handleSubmit(onSubmit)}>
+                            <div className="mt-3">
+                                <input className='w-100 py-2 px-2' {...register("name", { required: true })} placeholder="Parts Name" />
+                            </div>
+                            <div className="mt-3">
+                                <input className='w-100 py-2 px-2' type="number" {...register("quantity")} placeholder="Quantity" required />
+                            </div>
+                            <div className="mt-3">
+                                <input className='w-100 py-2 px-2' type="text" {...register("img")} placeholder="Photo URL" required />
+                            </div>
+                            <div className="mt-3">
+                                <input className='w-100 py-2 px-2' type="number" {...register("price", { min: 18, max: 'auto' })} placeholder="Price" required />
+                            </div>
+                            <div className="mt-3">
+                                <textarea className='w-100 py-2 px-2' {...register("description")} placeholder="Description" required />
+                            </div>
+                            <center>
+                                <input className='mt-4 border-0 bg-dark text-white px-5 py-2 rounded' type="submit" value="Add Parts" />
+                            </center>
+                        </form>
                     </div>
-                    <div className="mt-3">
-                        <input {...register("lastName", { pattern: /^[A-Za-z]+$/i })} />
-                    </div>
-                    <div className="mt-3">
-                        <input type="number" {...register("age", { min: 18, max: 99 })} />
-                    </div>
-                    <input className='mt-4' type="submit" />
-                </form>
+                    <div className="col-lg-2 col-md-2 col-sm-12"></div>
+                </div>
             </div>
 
         </div>
