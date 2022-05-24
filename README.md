@@ -1,11 +1,15 @@
 # This is Buy Car Parts Manufacturer Website
 
-## Live Side Github Link [Click me](https://github.com/programming-hero-web-course1/manufacturer-website-client-side-mdhasan-999).
+## Live Website [Click me](https://manufacturer-website-bb8cc.web.app/).
+
+## Client Side Github Link [Click me](https://github.com/programming-hero-web-course1/manufacturer-website-client-side-mdhasan-999).
 
 ## Server Side Github Link [Click me](https://github.com/programming-hero-web-course1/manufacturer-website-server-side-mdhasan-999).
 
 
-
+### Admin Login Details: 
+#### email: thankyou@gmail.com
+##### Password: 123456 
 
 In the project directory, you can run:
 

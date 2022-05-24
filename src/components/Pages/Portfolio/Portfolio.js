@@ -12,7 +12,7 @@ const Portfolio = () => {
                 <h3>My Create Website:</h3>
                 <p>CLICK 1:- <a href="https://inventory-car-management.web.app/">Click Me:</a></p>
                 <p>CLICK 2:- <a href="https://gym-trainer-4437e.web.app/">Click Me:</a></p>
-                <p>CLICK 2:- <a href="">Click Me:</a></p>
+                <p>CLICK 2:- <a href="https://manufacturer-website-bb8cc.web.app/">Click Me:</a></p>
             </div>
         </div>
     );
