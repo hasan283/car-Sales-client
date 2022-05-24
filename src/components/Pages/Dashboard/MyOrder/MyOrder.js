@@ -2,14 +2,13 @@ import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../../../firebase.init';
 
 const MyOrder = () => {
     const [user] = useAuthState(auth);
     const [orders, setOrders] = useState([]);
-    const navigate = useNavigate();
     useEffect(() => {
         if (user) {
             fetch(`http://localhost:5000/order?email=${user.email}`, {
@@ -23,7 +22,6 @@ const MyOrder = () => {
                     if (res.status === 401 || res.status === 403) {
                         signOut(auth)
                         localStorage.removeItem('accessToken');
-                        navigate('/login');
                     }
 
                     return res.json()
@@ -62,8 +60,9 @@ const MyOrder = () => {
                         <th>#</th>
                         <th>Parts Name</th>
                         <th>Quantity</th>
-                        <th>Address</th>
-                        <th>Manage Order</th>
+                        <th>Phone Number</th>
+                        <th>Delete Order</th>
+                        <th>Payment Order</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -72,9 +71,13 @@ const MyOrder = () => {
                             <td>{index + 1}</td>
                             <td>{order.parts.slice(0, 10)}</td>
                             <td>{order.quantity}</td>
-                            <td>{order.address}</td>
+                            <td>{order.phone}</td>
                             <td>
                                 <button onClick={() => handleOrderDelete(order._id)} className='border-0 rounded bg-danger fw-bold text-white'>Delete</button>
+                            </td>
+                            <td>
+                                {(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='bg-primary border-0 rounded text-white fw-bold'>Payment</button></Link>}
+                                {(order.price && order.paid) && <span className=' border-0 rounded text-primary fw-bold'>Paid</span>}
                             </td>
                         </tr>)
                     }

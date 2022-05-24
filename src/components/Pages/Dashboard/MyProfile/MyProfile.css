@@ -1,0 +1,19 @@
+.profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 3rem;
+}
+.profile img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border: 2px solid #f66214;
+    border-radius: 10px;
+}
+@media screen and (max-width:500px) {
+    .profile img{
+        max-width: 100%;
+    }
+}

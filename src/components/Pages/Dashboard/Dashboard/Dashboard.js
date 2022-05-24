@@ -18,9 +18,11 @@ const Dashboard = () => {
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="mx-auto">
                                 <Nav.Link className='fs-5 fw-bold text-info' as={Link} to="/dashboard">My Orders</Nav.Link>
+                                <Nav.Link className='fs-5 fw-bold text-info' as={Link} to='/dashboard/allReviews'>All Reviews</Nav.Link>
+                                <Nav.Link className='fs-5 fw-bold text-info' as={Link} to='/dashboard/myProfile'>My Profile</Nav.Link>
                                 {admin && <Nav.Link className='fs-5 fw-bold text-info' as={Link} to='/dashboard/allUsers'>All Users</Nav.Link>}
-                                <Nav.Link className='fs-5 fw-bold text-info' as={Link} to="/dashboard/manageProducts">Manage Products</Nav.Link>
-                                <Nav.Link className='fs-5 fw-bold text-info' as={Link} to="/dashboard/deleteProducts">Delete Products</Nav.Link>
+                                {admin && <Nav.Link className='fs-5 fw-bold text-info' as={Link} to="/dashboard/manageProducts">Manage Products</Nav.Link>}
+                                {admin && <Nav.Link className='fs-5 fw-bold text-info' as={Link} to="/dashboard/deleteProducts">Delete Products</Nav.Link>}
 
                             </Nav>
                         </Navbar.Collapse>

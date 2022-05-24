@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 
 const RowUser = ({ user, index }) => {
-    const { email, role, refetch } = user;
+    const { email, role } = user;
     const [users, setUsers] = useState([]);
 
 
@@ -38,7 +38,11 @@ const RowUser = ({ user, index }) => {
         if (proceed) {
             const url = `http://localhost:5000/users/${id}`;
             fetch(url, {
-                method: 'DELETE'
+                method: 'DELETE',
+                headers: {
+                    'content-type': 'application/json',
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                }
             })
                 .then(res => res.json())
                 .then(data => {

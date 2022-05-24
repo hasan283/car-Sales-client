@@ -18,6 +18,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import MyOrder from './components/Pages/Dashboard/MyOrder/MyOrder';
 import AllUsers from './components/Pages/Dashboard/AllUsers/AllUsers';
 import RequireAdmin from './components/Pages/LoginDetails/RequireAdmin/RequireAdmin';
+import AllReviews from './components/Pages/Dashboard/AllRivews/AllReviews';
+import MyProfile from './components/Pages/Dashboard/MyProfile/MyProfile';
+import Payment from './components/Pages/Dashboard/Payment/Payment';
 
 
 function App() {
@@ -45,8 +48,19 @@ function App() {
               <AllUsers></AllUsers>
             </RequireAdmin>
           }></Route>
-          <Route path='manageProducts' element={<ManageProducts></ManageProducts>}></Route>
-          <Route path='deleteProducts' element={<DeleteProducts></DeleteProducts>}></Route>
+          <Route path='allReviews' element={<AllReviews></AllReviews>}></Route>
+          <Route path='myProfile' element={<MyProfile></MyProfile>}></Route>
+          <Route path='payment/:id' element={<Payment></Payment>}></Route>
+          <Route path='manageProducts' element={
+            <RequireAdmin>
+              <ManageProducts></ManageProducts>
+            </RequireAdmin>
+          }></Route>
+          <Route path='deleteProducts' element={
+            <RequireAdmin>
+              <DeleteProducts></DeleteProducts>
+            </RequireAdmin>
+          }></Route>
         </Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
