@@ -21,6 +21,8 @@ import RequireAdmin from './components/Pages/LoginDetails/RequireAdmin/RequireAd
 import AllReviews from './components/Pages/Dashboard/AllRivews/AllReviews';
 import MyProfile from './components/Pages/Dashboard/MyProfile/MyProfile';
 import Payment from './components/Pages/Dashboard/Payment/Payment';
+import Portfolio from './components/Pages/Portfolio/Portfolio';
+import Notfound from './components/Pages/NotfoundPage/Notfound';
 
 
 function App() {
@@ -31,6 +33,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/blog' element={<Blog></Blog>}></Route>
+        <Route path='/portfolio' element={<Portfolio></Portfolio>}></Route>
         <Route path='/buyNow/:buyNowId' element={
           <RequireAuth>
             <BuyNow></BuyNow>
@@ -64,6 +67,7 @@ function App() {
         </Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='*' element={<Notfound></Notfound>}></Route>
       </Routes>
       <ToastContainer></ToastContainer>
       <Footer></Footer>

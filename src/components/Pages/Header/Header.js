@@ -27,6 +27,7 @@ const Header = () => {
                     <Nav className="mx-auto">
                         <Nav.Link className='text-dark fw-bold' as={Link} to="/home">Home</Nav.Link>
                         <Nav.Link className='text-dark fw-bold' as={Link} to="/blog">Blog</Nav.Link>
+                        <Nav.Link className='text-dark fw-bold' as={Link} to="/portfolio">Portfolio</Nav.Link>
                         {user && <Nav.Link className='text-dark fw-bold' as={Link} to="/dashboard">Dashboard</Nav.Link>}
                     </Nav>
                     <Nav>
