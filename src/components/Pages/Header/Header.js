@@ -34,7 +34,7 @@ const Header = () => {
                             :
                             <Nav.Link as={Link} to="/login"><button className='border-0 bg-dark text-white rounded'>Login</button></Nav.Link>
                         }
-
+                        {user ? <Nav.Link><b className='fw-bold text-info'>{user.displayName}</b></Nav.Link> : ''}
                     </Nav>
                 </Navbar.Collapse>
             </Container>
