@@ -20,12 +20,12 @@ const RowUser = ({ user, index }) => {
                 }
             })
                 .then(res => {
-                    toast.error('Failed to make an Admin!')
+                    toast.success('Successfully made an admin!')
                     res.json()
                 })
                 .then(data => {
                     if (data.modifiedCount > 0) {
-                        toast.success('Successfully made an admin!')
+                        toast.error('Failed to make an Admin!')
                     }
                 });
         }
