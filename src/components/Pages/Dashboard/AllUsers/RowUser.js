@@ -13,7 +13,7 @@ const RowUser = ({ user, index }) => {
     const makeAdmin = () => {
         const proceed = window.confirm('Are you sure make admin?');
         if (proceed) {
-            fetch(`http://localhost:5000/users/admin/${email}`, {
+            fetch(`https://obscure-fortress-38464.herokuapp.com/users/admin/${email}`, {
                 method: 'PUT',
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -36,7 +36,7 @@ const RowUser = ({ user, index }) => {
     const handleUserDelete = id => {
         const proceed = window.confirm('Are you sure you want to delete this user?');
         if (proceed) {
-            const url = `http://localhost:5000/users/${id}`;
+            const url = `https://obscure-fortress-38464.herokuapp.com/users/${id}`;
             fetch(url, {
                 method: 'DELETE',
                 headers: {

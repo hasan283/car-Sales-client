@@ -25,7 +25,7 @@ const PlaceOrder = () => {
             price: event.target.price.value,
             address: event.target.address.value,
         }
-        axios.post('http://localhost:5000/order', order)
+        axios.post('https://obscure-fortress-38464.herokuapp.com/order', order)
             .then(response => {
                 const { data } = response;
                 if (data.insertedId) {

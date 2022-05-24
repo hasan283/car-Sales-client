@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const useBuyNow = buyNowId => {
     const [parts, setParts] = useState({});
     useEffect(() => {
-        const url = `http://localhost:5000/parts/${buyNowId}`;
+        const url = `https://obscure-fortress-38464.herokuapp.com/parts/${buyNowId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setParts(data));

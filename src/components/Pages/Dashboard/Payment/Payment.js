@@ -8,7 +8,7 @@ const stripePromise = loadStripe('pk_test_51L0yBRCxPk8JEPa4HAid8BV5etF88eIhJZYuS
 
 const Payment = () => {
     const { id } = useParams();
-    const url = `http://localhost:5000/order/${id}`;
+    const url = `https://obscure-fortress-38464.herokuapp.com/order/${id}`;
     const [orders, setOrders] = useState([]);
     useEffect(() => {
         fetch(url, {

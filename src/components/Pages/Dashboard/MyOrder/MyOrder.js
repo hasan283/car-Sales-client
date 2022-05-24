@@ -11,7 +11,7 @@ const MyOrder = () => {
     const [orders, setOrders] = useState([]);
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/order?email=${user.email}`, {
+            fetch(`https://obscure-fortress-38464.herokuapp.com/order?email=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -36,7 +36,7 @@ const MyOrder = () => {
     const handleOrderDelete = id => {
         const proceed = window.confirm('Are you sure you want to delete this order?');
         if (proceed) {
-            const url = `http://localhost:5000/order/${id}`;
+            const url = `https://obscure-fortress-38464.herokuapp.com/order/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
