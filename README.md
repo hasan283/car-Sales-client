@@ -1,10 +1,10 @@
-# This is Buy Car Parts Manufacturer Website
+# This is Buy Car Parts Sales Manufacturer Website
 
 ## Live Website [Click me](https://manufacturer-website-bb8cc.web.app/).
 
-## Client Side Github Link [Click me](https://github.com/programming-hero-web-course1/manufacturer-website-client-side-mdhasan-999).
+## Client Side Github Link [Click me](https://github.com/hasan283/car-sales-client).
 
-## Server Side Github Link [Click me](https://github.com/programming-hero-web-course1/manufacturer-website-server-side-mdhasan-999).
+## Server Side Github Link [Click me](https://github.com/hasan283/car-sales-server).
 
 
 ### Admin Login Details: 
@@ -13,15 +13,8 @@
 
 In the project directory, you can run:
 
-* রিয়াক্ট এপস ইনিস্টল করেছি।
-* রিয়াক্ট রাউটার ইনিস্টল করেছি।
-* ফায়ারবেজ ইনিস্টল করেছি।
-* ওয়েবসাইটের একটি নাম দিয়েছি। এবং সেটি শিরোনামে দেখিয়েছি।
-* বুটস্ট্রাপ ইনিস্টাল করেছি।
-* কয়েকটি কস্পোনেন্ট যোগ করেছি।
-* হেডার সেংশন বানিয়েছি।
-* ব্যানার সেংশন বানিয়েছি।
-* আলাদা একটি বিভাগ যোগ করেছি।
-* একটি কাস্টম হুক বানিয়েছি।
-* সারভিস সেংশন যোগ করেছি।
-* চেকআউট পেজ বানিয়েছি।
+### It’s a car parts sales website. 
+* This website is for sale of car parts.
+* To purchase any product from here, the user must login / register with email password or social link.
+* This is secured by Firebase Authentication. 
+Technology used: React.js, Node.js, Bootstrap, Express.js, MongoDB, Material UI, Firebase, heroku 
