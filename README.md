@@ -11,7 +11,7 @@ In the project directory, you can run:
 
 ### It’s a car parts sales website. 
 * This website is for sale of car parts.
-* To purchase any product from here, the user must login / register with email password or social link.
+* To purchase any product from here, the user must login/register with an email password or social link.
 * This is secured by Firebase Authentication. 
 
 
