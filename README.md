@@ -7,10 +7,6 @@
 ## Server Side Github Link [Click me](https://github.com/hasan283/car-sales-server).
 
 
-### Admin Login Details: 
-#### email: thankyou@gmail.com
-##### Password: 123456 
-
 In the project directory, you can run:
 
 ### It’s a car parts sales website. 
