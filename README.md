@@ -17,4 +17,6 @@ In the project directory, you can run:
 * This website is for sale of car parts.
 * To purchase any product from here, the user must login / register with email password or social link.
 * This is secured by Firebase Authentication. 
-Technology used: React.js, Node.js, Bootstrap, Express.js, MongoDB, Material UI, Firebase, heroku 
+
+
+##### Technology used: React.js, Node.js, Bootstrap, Express.js, MongoDB, Material UI, Firebase, heroku 
